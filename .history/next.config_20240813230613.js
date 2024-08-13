@@ -10,6 +10,10 @@ const config = {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "source.unsplash.com" },
+      { protocol: "https", hostname: "picsum.photos" },
+      { protocol: "https", hostname: "utfs.io" },
+      { protocol: "https", hostname: "scontent.whatsapp.net" },
+      { protocol: "https", hostname: "drive.google.com" },
     ],
   },
 };
