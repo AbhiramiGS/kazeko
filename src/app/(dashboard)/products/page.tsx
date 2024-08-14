@@ -99,19 +99,22 @@ const ProductsPage = () => {
           </Card>
           <div className="mt-2 grid w-full grid-cols-4 gap-4">
             {sampleProducts.map(async (product) => {
-              const res = await fetch("http://localhost:8000/predict-demand", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  ...sampleData,
-                  product: {
-                    ...sampleData.product,
-                    product_id: product.id,
+              const res = await fetch(
+                "https://kazeko-ml.vercel.app/predict-demand",
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
                   },
-                }),
-              });
+                  body: JSON.stringify({
+                    ...sampleData,
+                    product: {
+                      ...sampleData.product,
+                      product_id: product.id,
+                    },
+                  }),
+                },
+              );
               let data = "loading";
 
               if (!res.ok) {
@@ -132,7 +135,7 @@ const ProductsPage = () => {
                       <div>
                         <p>Demand</p>{" "}
                         <div className="flex">
-                          <TrendingUp className="stroke-green-400 mr-3" />{" "}
+                          <TrendingUp className="mr-3 stroke-green-400" />{" "}
                           <span>{demand.demand}</span>
                         </div>
                       </div>
