@@ -47,25 +47,21 @@ const ShipmentsPage = () => {
             </CardHeader>
           </Card>
         </div>
-        <div className="col-span-4">
-          <div className="grid grid-cols-4 gap-4">
-            {sampleShipments.map((shipment) => (
-              <Card className="transition hover:scale-105" key={shipment.id}>
-                <CardHeader>
-                  <CardDescription>Shipment ID</CardDescription>
-                  <CardTitle>{shipment.id}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm">Source Port: {shipment.sourcePort}</p>
-                  <p className="text-sm">Destination: {shipment.destination}</p>
-                </CardContent>
-                <CardFooter>
-                  <p className="text-sm">ETA: {shipment.eta}</p>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </div>
+        {sampleShipments.map((shipment) => (
+          <Card className="transition hover:scale-105" key={shipment.id}>
+            <CardHeader>
+              <CardDescription>Shipment ID</CardDescription>
+              <CardTitle>{shipment.id}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm">Source Port: {shipment.sourcePort}</p>
+              <p className="text-sm">Destination: {shipment.destination}</p>
+            </CardContent>
+            <CardFooter>
+              <p className="text-sm">ETA: {shipment.eta}</p>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
     </div>
   );
