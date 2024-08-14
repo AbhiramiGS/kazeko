@@ -174,10 +174,10 @@ const SideNav = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="/admin/settings"
+                href="/settings"
                 className={cn(
                   "flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8",
-                  pathname === "/admin/settings"
+                  pathname === "/settings"
                     ? "bg-accent text-accent-foreground"
                     : "",
                 )}
