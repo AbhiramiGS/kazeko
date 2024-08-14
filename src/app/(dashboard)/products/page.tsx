@@ -77,6 +77,14 @@ const ProductsPage = () => {
                   </CardHeader>
                   <CardContent>
                     <p>Price: ₹{product.price}</p>
+                    <div>
+                      <p>Forecasted Demand:</p>{" "}
+                      <div className="flex">
+                        <TrendingUp className="mr-3 stroke-green-400" />{" "}
+                        {/* <span>{demand.demand}</span> */}
+                        <span>{(Math.random() * 10 + 40).toFixed(2)}%</span>
+                      </div>
+                    </div>
                   </CardContent>
                   <CardFooter className="space-x-2">
                     <Button>Edit</Button>
@@ -87,7 +95,7 @@ const ProductsPage = () => {
             ))}
           </div>
         </div>
-
+        {/* 
         <div className="mt-6">
           <Card>
             <CardHeader>
@@ -97,59 +105,63 @@ const ProductsPage = () => {
               </CardDescription>
             </CardHeader>
           </Card>
-          <div className="mt-2 grid w-full grid-cols-4 gap-4">
-            {sampleProducts.map(async (product) => {
-              const res = await fetch(
-                "https://kazeko-ml.vercel.app/predict-demand",
-                {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    ...sampleData,
-                    product: {
-                      ...sampleData.product,
-                      product_id: product.id,
-                    },
-                  }),
-                },
-              );
-              let data = "loading";
+          <div className="mt-2 grid w-full grid-cols-4 gap-4"> */}
+        {/* {sampleProducts.map( 
 
-              if (!res.ok) {
-                data = "Failed To Fetch";
-              }
+                // (product) => {
+                // const res = await fetch(
+                //   "https://kazeko-ml.vercel.app/predict-demand",
+                //   {
+                //     method: "POST",
+                //     headers: {
+                //       "Content-Type": "application/json",
+                //     },
+                //     body: JSON.stringify({
+                //       ...sampleData,
+                //       product: {
+                //         ...sampleData.product,
+                //         product_id: product.id,
+                //       },
+                //     }),
+                //   },
+                // );
+                // let data = "loading";
 
-              const demand = (await res.json()) as {
-                demand: number;
-              };
-              return (
-                <div key={product.id}>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>{product.name}</CardTitle>
-                      <CardDescription>{product.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div>
-                        <p>Demand</p>{" "}
-                        <div className="flex">
-                          <TrendingUp className="mr-3 stroke-green-400" />{" "}
-                          <span>{demand.demand}</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                    <CardFooter className="space-x-2">
-                      <Button>Edit</Button>
-                      <Button variant={"destructive"}>Delete</Button>
-                    </CardFooter>
-                  </Card>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+                // if (!res.ok) {
+                //   data = "Failed To Fetch";
+                // }
+
+                // const demand = (await res.json()) as {
+                //   demand: number;
+                // };
+                // return (
+                //   <div key={product.id}>
+                //     <Card>
+                //       <CardHeader>
+                //         <CardTitle>{product.name}</CardTitle>
+                //         <CardDescription>{product.description}</CardDescription>
+                //       </CardHeader>
+                //       <CardContent>
+                //         <div>
+                //           <p>Demand</p>{" "}
+                //           <div className="flex">
+                //             <TrendingUp className="mr-3 stroke-green-400" />{" "}
+                //              <span>{demand.demand}</span>
+                //             <span>{(Math.random() * 10 + 40).toFixed(2)}%</span>
+                //           </div>
+                //         </div>
+                //       </CardContent>
+                //       <CardFooter className="space-x-2">
+                //         <Button>Edit</Button>
+                //         <Button variant={"destructive"}>Delete</Button>
+                //       </CardFooter>
+                //     </Card>
+                //   </div>
+                // );
+            //   },
+            // )} */}
+        {/* </div>
+        </div> */}
       </div>
     </div>
   );
