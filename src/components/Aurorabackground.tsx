@@ -22,7 +22,7 @@ export function AuroraBackgroundDemo() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col gap-4 px-4 w-full"
+        className="relative flex w-full flex-col gap-4 px-4"
       >
         {/* <div className="text-3xl md:text-4xl font-bold text-[#9f9763] text-center">
           {props.title}
