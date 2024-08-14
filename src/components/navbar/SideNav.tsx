@@ -13,6 +13,7 @@ import {
   Shapes,
   ShoppingCart,
   Users2,
+  Store
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -168,6 +169,26 @@ const SideNav = () => {
               </Link>
             </TooltipTrigger>
             <TooltipContent side="right">Ship Yards</TooltipContent>
+          </Tooltip>
+
+          
+          {/* Stores */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="/stores"
+                className={cn(
+                  "flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8",
+                  pathname === "/stores"
+                    ? "bg-accent text-accent-foreground"
+                    : "",
+                )}
+              >
+                <Store className="h-5 w-5" />
+                <span className="sr-only">Stores</span>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent side="right">Stores</TooltipContent>
           </Tooltip>
         </nav>
         <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
