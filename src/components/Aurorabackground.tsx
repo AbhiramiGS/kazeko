@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { AuroraBackground } from "./ui/aurora-background";
-import Link from "next/link";
 // import { AuroraBackground } from "/ui/aurora-background";
 
 // type Props = {
